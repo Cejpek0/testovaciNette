@@ -1,0 +1,63 @@
+div.flash {
+    color: black;
+    background: #FFF9D7;
+    border: 1px solid #E2C822;
+    padding: 1em;
+    margin: 1em 0;
+}
+a[href^="#error:"] {
+    background: red;
+    color: white;
+}
+
+
+form .required label {
+    font-weight: bold;
+}
+
+form .error {
+    color: #D00;
+    font-weight: bold;
+}
+
+ .row {
+     display: flex;
+     flex-wrap: wrap;
+     padding: 0 4px;
+ }
+
+/* Create four equal columns that sits next to each other */
+#lightgallery .column {
+    flex: 25%;
+    max-width: 33.3%;
+    padding: 0 4px;
+}
+
+#lightgallery .column img {
+    margin-top: 8px;
+    vertical-align: middle;
+    width: 100%;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s linear;
+}
+#lightgallery .column img:hover {
+    transform: scale(1.02);
+}
+@media screen and (max-width: 800px) {
+    #lightgallery .column {
+        flex: 50%;
+        max-width: 50%;
+    }
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+    #lightgallery .column {
+        flex: 100%;
+        max-width: 100%;
+    }
+    #lightgallery .column img {
+        filter: grayscale(0) brightness(1);
+    }
+}

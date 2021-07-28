@@ -1,0 +1,1 @@
+{"dependencies":[["racc",["~> 1.4"]],["nokogiri",[">= 0"]],["vagrant-parallels",["= 2.2.3"]],["vagrant-winnfsd",["= 1.4.0"]]],"checksum":"1344f314c0c329b5b58121d433dd2c8d53c0134be8ee83484cf4416b6ba3af75","vagrant_version":"2.2.17"}

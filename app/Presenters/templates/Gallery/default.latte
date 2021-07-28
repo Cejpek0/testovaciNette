@@ -1,0 +1,25 @@
+{block content}
+<link type="text/css" rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@2.1.8/css/lightgallery-bundle.css"/>
+<script src="https://cdn.jsdelivr.net/npm/lightgallery@2.1.8/lightgallery.umd.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lightgallery@2.1.8/plugins/zoom/lg-zoom.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lightgallery@2.1.8/plugins/thumbnail/lg-thumbnail.min.js"></script>
+<div id="lightgallery" >
+    <div class="container-fluid">
+        <div class="row">
+            <div class="column" n:foreach="$images as $line">
+                <a  n:foreach="$line as $image" href="{$basePath}/images/gallery/{$image->file_name}">
+                    <img class="img-fluid" src="{$basePath}/images/gallery/{$image->file_name}" />
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    lightGallery(document.getElementById('lightgallery'), {
+        plugins: [lgZoom, lgThumbnail],
+        thumbnail:true,
+        speed: 1200,
+        selector:'a',
+    });
+</script>
