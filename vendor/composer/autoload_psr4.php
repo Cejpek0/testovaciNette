@@ -7,5 +7,12 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'Symfony\\Thanks\\' => array($vendorDir . '/symfony/thanks/src'),
+    'Nettrine\\DBAL\\' => array($vendorDir . '/nettrine/dbal/src'),
+    'Nettrine\\Cache\\' => array($vendorDir . '/nettrine/cache/src'),
+    'Doctrine\\Deprecations\\' => array($vendorDir . '/doctrine/deprecations/lib/Doctrine/Deprecations'),
+    'Doctrine\\DBAL\\' => array($vendorDir . '/doctrine/dbal/lib/Doctrine/DBAL'),
+    'Doctrine\\Common\\Cache\\' => array($vendorDir . '/doctrine/cache/lib/Doctrine/Common/Cache'),
+    'Doctrine\\Common\\' => array($vendorDir . '/doctrine/event-manager/lib/Doctrine/Common'),
+    'Contributte\\DI\\' => array($vendorDir . '/contributte/di/src'),
     'App\\' => array($baseDir . '/app'),
 );

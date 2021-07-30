@@ -15,6 +15,22 @@ class ComposerStaticInit282f65bd5f240d12c712912b97f1835d
         array (
             'Symfony\\Thanks\\' => 15,
         ),
+        'N' => 
+        array (
+            'Nettrine\\DBAL\\' => 14,
+            'Nettrine\\Cache\\' => 15,
+        ),
+        'D' => 
+        array (
+            'Doctrine\\Deprecations\\' => 22,
+            'Doctrine\\DBAL\\' => 14,
+            'Doctrine\\Common\\Cache\\' => 22,
+            'Doctrine\\Common\\' => 16,
+        ),
+        'C' => 
+        array (
+            'Contributte\\DI\\' => 15,
+        ),
         'A' => 
         array (
             'App\\' => 4,
@@ -25,6 +41,34 @@ class ComposerStaticInit282f65bd5f240d12c712912b97f1835d
         'Symfony\\Thanks\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/thanks/src',
+        ),
+        'Nettrine\\DBAL\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/nettrine/dbal/src',
+        ),
+        'Nettrine\\Cache\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/nettrine/cache/src',
+        ),
+        'Doctrine\\Deprecations\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/doctrine/deprecations/lib/Doctrine/Deprecations',
+        ),
+        'Doctrine\\DBAL\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/doctrine/dbal/lib/Doctrine/DBAL',
+        ),
+        'Doctrine\\Common\\Cache\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/doctrine/cache/lib/Doctrine/Common/Cache',
+        ),
+        'Doctrine\\Common\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/doctrine/event-manager/lib/Doctrine/Common',
+        ),
+        'Contributte\\DI\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/contributte/di/src',
         ),
         'App\\' => 
         array (

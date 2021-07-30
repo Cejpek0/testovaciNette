@@ -1,5 +1,6 @@
 <?php
 
+declare(strict_types=1);
 
 namespace App\Model;
 use Nette\SmartObject;
@@ -19,16 +20,47 @@ class DatabaseWorker
             $this->database->table('image_control')->insert([
                 'name' => $data->name,
                 'file_name' => $data->image->getName(),
-                'description' => $data->description,
                 'type' => $data->type,
                 'do_show' => $data->do_show
             ]);
     }
-    public function returnAvaliableImages():array
+    public function getAvaliableImages(string $type = ''):array
     {
-        $tempArray = array();
-        $arrayToReturn = array();
-        $data = (array)$this->database->table('image_control')->where('do_show',true)->order('id DESC')->fetchPairs('id');
-        return array_chunk($data,3);
+        $arrayCol1 = array();
+        $arrayCol2 = array();
+        $arrayCol3 = array();
+        $dataToReturn = array();
+        $data = $this->database
+            ->table('image_control')
+            ->where('do_show',true)
+            ->order('id DESC');
+
+        if($type!=='')
+        {
+            $data->where('type',$type);
+        }
+        $i = 1;
+        foreach ($data as $line) {
+            switch ($i) {
+                case 1:
+                    $arrayCol1[] = $line;
+                    break;
+                case 2:
+                    $arrayCol2[] = $line;
+                    break;
+                case 3:
+                    $arrayCol3[] = $line;
+                    break;
+            }
+
+            $i++;
+            if($i === 4) {
+                $i = 1;
+            }
+        }
+        $dataToReturn[] = $arrayCol1;
+        $dataToReturn[] = $arrayCol2;
+        $dataToReturn[] = $arrayCol3;
+        return $dataToReturn;
     }
 }
