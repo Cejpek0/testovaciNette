@@ -10,12 +10,17 @@ use Nette\Application\UI\Form;
 final class AdminPresenter extends BasePresenter
 {
     private DatabaseWorker $databaseWorker;
+
+    /**
+     * AdminPresenter constructor.
+     * @param DatabaseWorker $databaseWorker
+     *
+     */
     public function __construct(DatabaseWorker $databaseWorker)
     {
         parent::__construct();
         $this->databaseWorker = $databaseWorker;
     }
-
     public function actionDefault(): void
     {
         if(!$this -> getUser()->isLoggedIn())
@@ -23,6 +28,11 @@ final class AdminPresenter extends BasePresenter
             $this->redirect('Sign:login');
         }
     }
+
+    /**
+     * @return Form
+     *
+     */
     protected function createComponentFormAddImage(): Form
     {
         $types = [
@@ -49,6 +59,12 @@ final class AdminPresenter extends BasePresenter
         return $form;
     }
 
+    /**
+     * @param Form $form
+     * @param $data
+     * @throws \Nette\Application\AbortException
+     *
+     */
     public function formSucceeded(Form $form, $data): void
     {
         if($this->getUser()->isLoggedIn())

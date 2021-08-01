@@ -10,19 +10,13 @@ use Nette\Application\UI\Form;
 
 final class SignPresenter extends BasePresenter
 {
-    private Nette\Database\Explorer $database;
-
-    public function __construct(Nette\Database\Explorer $database)
-    {
-        parent::__construct();
-        $this->database = $database;
-
-    }
-
     public function renderLogin(): void
     {
     }
 
+    /**
+     * @return Form
+     */
     protected function createComponentSignInForm(): Form
     {
         $form = new Form;
@@ -34,8 +28,9 @@ final class SignPresenter extends BasePresenter
         $form->onSuccess[] = [$this, 'signInFormSucceeded'];
         return $form;
     }
-    public function signInFormSucceeded(Form $form, \stdClass $data):void
+    public function signInFormSucceeded(Form $form):void
     {
+        $data = $form->values;
         try {
             $this->getUser()->login($data->username, $data->password);
             $this->redirect('Admin:');

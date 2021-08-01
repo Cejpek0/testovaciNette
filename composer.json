@@ -20,6 +20,14 @@
 		"nette/utils": "^3.2",
 		"latte/latte": "^2.9",
 		"tracy/tracy": "^2.8",
+		"nettrine/dbal": "^0.7.0",
+		"nettrine/orm": "^0.8.1",
+		"nettrine/annotations": "^0.7.0",
+		"nettrine/cache": "^0.3.0",
+		"nettrine/migrations": "^0.7.1",
+		"nettrine/fixtures": "^0.6.0",
+		"contributte/console": "^0.9.1",
+		"symfony/console": "^5.3"
 	},
 	"require-dev": {
 		"nette/tester": "^2.3",

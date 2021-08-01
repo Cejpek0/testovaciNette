@@ -19,7 +19,26 @@ di:
 
 services:
     - App\Router\RouterFactory::createRouter
+    - App\Model\Database\Repository\ImageRepository
     - App\Model\DatabaseWorker
+    - Nettrine\Migrations\Subscriber\FixPostgreSQLDefaultSchemaSubscriber
 security:
     users:
-        admin: secret  # user 'admin', password 'secret'
+        admin: secret
+
+extensions:
+    dbal: Nettrine\DBAL\DI\DbalExtension
+    orm: Nettrine\ORM\DI\OrmExtension
+    orm.annotations: Nettrine\ORM\DI\OrmAnnotationsExtension
+
+dbal:
+    connection:
+        host: 127.0.0.1
+        user: root
+        password: admin
+        dbname: nette
+        driver: pdo_mysql
+
+orm.annotations:
+    mapping:
+        - App/Model/Database/Entity
